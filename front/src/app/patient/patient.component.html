@@ -1,0 +1,15 @@
+<div class="d-flex flex-row justify-content-center">
+  <button class="btn btn-secondary d-flex text-center" (click)="listTab()">Appointments List
+  </button>
+  <button class="btn btn-secondary d-flex text-center" (click)="addTab()">Add New Appointment
+  </button>
+</div>
+
+<div *ngIf="isAppointmentsListShown">
+  <app-appointments-list></app-appointments-list>
+</div>
+
+<div *ngIf="isAddAppointmentShown">
+  <app-new-appointment></app-new-appointment>
+</div>
+

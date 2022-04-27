@@ -1,0 +1,30 @@
+<nav class="navbar justify-content-center flex-row">
+  <strong class="text-secondary font-weight-bold float-left">
+    Dental Center
+  </strong>
+  <a class="text-secondary nav-link"
+     routerLink="home">
+    Home
+  </a>
+  <a class="text-secondary nav-link"
+     *ngIf="authority === 'patient'"
+     routerLink="patient">
+    Patient Page
+  </a>
+  <a class="text-secondary nav-link"
+     *ngIf="authority === 'doctor'"
+     routerLink="doctor">
+    Doctor Page
+  </a>
+  <a class="text-secondary nav-link"
+     *ngIf="!authority"
+     routerLink="auth/login">
+    Login
+  </a>
+  <a class="text-secondary nav-link"
+     *ngIf="authority"
+     (click)="logout(); toHomePage()">
+    Logout
+  </a>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,8 @@
+.navbar{
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.nav-item{
+  margin-right: 4rem;
+  font-family: Montesserat, serif;
+  margin-top: 1rem;
+}

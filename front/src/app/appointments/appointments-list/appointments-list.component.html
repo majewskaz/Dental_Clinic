@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="list m-2">
+    <ul *ngIf="authority === 'doctor'"
+        class="list-group">
+      <li *ngFor="let appointment of appointmentsList"
+          class="list-group-item">
+        <p class="text-center">
+          <strong>{{ appointment.type }}</strong>
+          {{ appointment.date }}
+          {{ appointment.hour }}
+          {{ appointment.status }}</p>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-default"
+                  (click)="delete(appointment)">
+            Delete
+          </button>
+          <button class="btn btn-secondary"
+                  (click)="acceptAppointment(appointment.id, appointment.type, appointment.date,
+                                              appointment.hour, 'APPOINTMENT_ACCEPTED',
+                                              appointment.doctorUsername, appointment.patientUsername); reloadPage()">
+            Accept
+          </button>
+          <button class="btn btn-default"
+                  (click)="heldAppointment(appointment.id, appointment.type, appointment.date,
+                                              appointment.hour, 'APPOINTMENT_HELD',
+                                              appointment.doctorUsername, appointment.patientUsername); reloadPage()">
+            Held
+          </button>
+        </div>
+      </li>
+    </ul>
+    <ul *ngIf="authority === 'patient'"
+        class="list-group">
+      <li *ngFor="let appointment of appointmentsList"
+          class="list-group-item">
+        <p class="text-center">
+          <strong>{{ appointment.type }}</strong>
+          {{ appointment.date }}
+          {{ appointment.hour }}
+          {{ appointment.status }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
