@@ -1,2 +1,1 @@
-"# IWAproject" 
-# Dental-Clinic
+Student project using Angular
