@@ -1,1 +1,1 @@
-Student project using Angular
+Student project using Angular and Springboot
